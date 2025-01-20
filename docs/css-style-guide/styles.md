@@ -24,6 +24,7 @@
 - use `.u-*` for utility classes `.u-fs-100`
 - keep utility classes to the right and BEM classes to left `<header class"header u-bg-100">...</header>`
 - `--[scope]-[property]-[variant]` for css custom properties (e.g `--font-size-100`)
+- Use `--_` prefix for custom (element-specific) CSS properties and `--` for global (shared across components) CSS properties to ensure clear scoping and maintainability.
 - use `.u-[category]-[property]-[variant]` for utility classes
   - **Prefix**: `u-` (indicates utility class).
   - **Category**: Broad category like `m` (margin), `p` (padding), `fs` (font-size), or `bg` (background).
