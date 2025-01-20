@@ -1,0 +1,19 @@
+@use "./../abstracts/variables" as vars;
+
+@each $font-name, $font in vars.$font-family {
+  .u-ff-#{$font-name} {
+    font-family: var(--font-family-#{$font-name});
+  }
+}
+
+@each $font-size, $size in vars.$font-sizes {
+  .u-fs-#{$font-size} {
+    font-size: var(--font-size-#{$font-size});
+  }
+}
+
+@each $font-weight, $weight in vars.$font-weights {
+  .u-fw-#{$font-weight} {
+    font-weight: var(--font-weight-#{$font-weight});
+  }
+}

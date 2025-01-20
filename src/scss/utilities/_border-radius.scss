@@ -1,0 +1,7 @@
+@use "./../abstracts/variables" as vars;
+
+@each $border-radius-size, $border-value in vars.$border-radius {
+  .u-br-#{$border-radius-size} {
+    border-radius: var(--border-radius-#{$border-radius-size});
+  }
+}

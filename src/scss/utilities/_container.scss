@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  max-width: var(--_container-max-width, 1590px);
+  margin: 0 auto;
+  padding: var(--_container-padding, 1rem);
+}
+
+.container--medium {
+  --_container-max-width: 1190px;
+  --_container-padding: 1rem;
+}
+
+.container--large {
+  --_container-max-width: 1590px;
+  --_container-padding: 2rem;
+}
