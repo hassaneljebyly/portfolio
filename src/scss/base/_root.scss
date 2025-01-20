@@ -1,0 +1,39 @@
+@use "./../abstracts/variables" as vars;
+
+:root {
+  @each $color-name, $color in vars.$color-primary {
+    --color-primary-#{$color-name}: #{$color};
+  }
+
+  @each $color-name, $color in vars.$color-secondary {
+    --color-secondary-#{$color-name}: #{$color};
+  }
+
+  @each $color-name, $color in vars.$color-neutral {
+    --color-neutral-#{$color-name}: #{$color};
+  }
+
+  @each $font-name, $font in vars.$font-family {
+    --font-family-#{$font-name}: #{$font};
+  }
+
+  @each $font-size, $size in vars.$font-sizes {
+    --font-size-#{$font-size}: #{$size};
+  }
+
+  @each $font-weight, $weight in vars.$font-weights {
+    --font-weight-#{$font-weight}: #{$weight};
+  }
+
+  @each $spacing-size, $spacing in vars.$spacing {
+    --spacing-#{$spacing-size}: #{$spacing};
+  }
+
+  @each $level-name, $level-value in vars.$z-index {
+    --z-#{$level-name}: #{$level-value};
+  }
+
+  @each $border-size, $border-value in vars.$border-radius {
+    --border-radius-#{$border-size}: #{$border-value};
+  }
+}

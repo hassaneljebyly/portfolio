@@ -1,0 +1,7 @@
+@use "./../abstracts/variables" as vars;
+
+@each $level-name, $level-value in vars.$z-index {
+  .u-zi-#{$level-name} {
+    z-index: var(--z-#{$level-name});
+  }
+}

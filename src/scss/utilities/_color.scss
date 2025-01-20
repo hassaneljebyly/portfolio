@@ -1,0 +1,40 @@
+@use "./../abstracts/variables" as vars;
+
+// background color
+@each $color-name, $color in vars.$color-primary {
+  .u-bg-p-#{$color-name} {
+    background-color: var(--color-primary-#{$color-name});
+  }
+}
+
+@each $color-name, $color in vars.$color-secondary {
+  .u-bg-s-#{$color-name} {
+    background-color: var(--color-secondary-#{$color-name});
+  }
+}
+
+@each $color-name, $color in vars.$color-neutral {
+  .u-bg-n-#{$color-name} {
+    background-color: var(--color-neutral-#{$color-name});
+  }
+}
+
+// text color
+
+@each $color-name, $color in vars.$color-primary {
+  .u-text-p-#{$color-name} {
+    color: var(--color-primary-#{$color-name});
+  }
+}
+
+@each $color-name, $color in vars.$color-secondary {
+  .u-text-s-#{$color-name} {
+    color: var(--color-secondary-#{$color-name});
+  }
+}
+
+@each $color-name, $color in vars.$color-neutral {
+  .u-text-n-#{$color-name} {
+    color: var(--color-neutral-#{$color-name});
+  }
+}
