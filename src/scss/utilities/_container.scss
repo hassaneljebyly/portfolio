@@ -2,7 +2,7 @@
   width: 100%;
   max-width: var(--_container-max-width, 1590px);
   margin: 0 auto;
-  padding: var(--_container-padding, 1rem);
+  padding-inline: var(--_container-padding, 1rem);
 }
 
 .container--medium {

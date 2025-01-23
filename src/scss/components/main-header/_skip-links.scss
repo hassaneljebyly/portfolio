@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "./../../abstracts/variables" as vars;
+
+.skip-links {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  padding: map.get(vars.$spacing, "400");
+  margin: map.get(vars.$spacing, "200");
+  z-index: map.get(vars.$z-index, "header");
+  // add translate: 0% -150%; as inline style so when page loads skip-links is hidden
+  transition: translate 250ms ease;
+
+  &:focus-visible {
+    translate: 0% 0% !important;
+  }
+}
