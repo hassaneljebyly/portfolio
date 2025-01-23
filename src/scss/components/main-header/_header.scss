@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "./../../abstracts/variables" as vars;
+
+.main-header {
+  --_nav-padding-block: #{map.get(vars.$spacing, "600")};
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: map.get(vars.$z-index, "header");
+}

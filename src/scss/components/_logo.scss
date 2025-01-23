@@ -1,0 +1,17 @@
+.logo {
+  --_fill-j: var(--color-primary-910);
+  --_fill-hassan: var(--color-secondary-400);
+
+  &__j {
+    fill: var(--_fill-j);
+  }
+
+  &__hassan {
+    fill: var(--_fill-hassan);
+  }
+
+  &--dark {
+    --_fill-j: var(--color-neutral-100);
+    --_fill-hassan: var(--color-secondary-200);
+  }
+}

@@ -1,0 +1,119 @@
+@use "sass:map";
+@use "./../../abstracts/mixins" as mixin;
+@use "./../../abstracts/variables" as vars;
+
+.dropdown-menu {
+  --_close-svg-display: block;
+  --_open-svg-display: none;
+  position: absolute;
+  inset: 0;
+  height: 100dvh;
+  padding-bottom: var(--_nav-padding-block);
+  padding-inline: var(--_container-padding);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: fit-content(100%) auto;
+
+  @include mixin.breakpoint('lg') {
+    display: none;
+  }
+
+  &__nav-wrapper {
+    overflow: hidden;
+    display: block;
+  }
+
+  &__nav-wrapper:not([aria-hidden="false"]) {
+    // prevents focus on links when menu is closed
+    display: none;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: calc(var(--_nav-padding-block)/1.5);
+  }
+
+  &__toggle-btn {
+    background-color: transparent;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    aspect-ratio: 1;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__open-svg {
+    display: var(--_open-svg-display);
+  }
+
+  &__close-svg {
+    display: var(--_close-svg-display);
+  }
+
+  &__list,
+  &__footer {
+    padding: 0;
+    border-top: 1px solid var(--color-neutral-900);
+  }
+
+  &__list {
+    padding-top: map.get(vars.$spacing, "800");
+    margin-top: 0;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: map.get(vars.$spacing, "800");
+    padding-top: map.get(vars.$spacing, "800");
+    gap: map.get(vars.$spacing, "500");
+
+    @media (max-height: 700px) {
+      margin-top: map.get(vars.$spacing, "400");
+      padding-top: map.get(vars.$spacing, "200");
+      row-gap: map.get(vars.$spacing, "100");
+    }
+  }
+
+  &__footer-item:first-child {
+    flex-basis: 100%;
+    margin-bottom: map.get(vars.$spacing, "400");
+
+    @include mixin.breakpoint('sm') {
+      margin-bottom: initial;
+    }
+  }
+
+  &__footer-item:last-child {
+    flex-basis: 100%;
+    margin-left: initial;
+
+    @include mixin.breakpoint('sm') {
+      flex-basis: initial;
+      margin-left: auto;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
+
+.js-dropdown-menu--closed {
+  --_close-svg-display: none;
+  --_open-svg-display: block;
+  background-color: transparent;
+  height: fit-content;
+  padding-bottom: 0;
+  grid-template-rows: 1fr 0fr;
+}
